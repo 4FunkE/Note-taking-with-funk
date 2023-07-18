@@ -5,3 +5,18 @@ const path = require("path");//import path to create file paths
 
 const app = express();//create a variable to use express (web building frameswork)
 const PORT = process.env.PORT || 3000; //the port linked it .env or 3000
+
+//GET for read file and return
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+  });
+
+// POST update a new note add to file and return it
+app.post('/api/reviews', (req, res) => {
+    
+    res.json(`${req.method} request received`);
+  
+    console.info(req.rawHeaders);
+  
+    console.info(`${req.method} request received`);
+  });
