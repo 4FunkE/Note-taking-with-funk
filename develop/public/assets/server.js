@@ -7,8 +7,15 @@ const app = express();//create a variable to use express (web building frameswor
 const PORT = process.env.PORT || 3000; //the port linked it .env or 3000
 
 //GET for read file and return
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+app.get('/api/notes', (req, res) => {
+    fs.readFile(path.join(__dirname, 'db.json'), "utf8", (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ error: 'Failed to read the funking notes...' });
+        }
+        const notes = JSON.parse(data);
+        res.json(notes);
+    });
   });
 
 // POST update a new note add to file and return it
