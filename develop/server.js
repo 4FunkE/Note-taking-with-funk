@@ -6,6 +6,11 @@ const path = require("path");//import path to create file paths
 const app = express();//create a variable to use express (web building frameswork)
 const PORT = process.env.PORT || 3000; //the port linked it .env or 3000
 
+// Middleware to parse JSON request bodies
+app.use(express.json());
+// Serve static files from the "public" directory
+app.use(express.static('public'));
+
 //GET read file, and return
 app.get('/api/notes', (req, res) => {
     fs.readFile(path.join(__dirname, 'db.json'), "utf8", (err, data) => {
@@ -46,13 +51,13 @@ app.post('/api/notes', (req, res) => {
 
 //shows the notes.html
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, 'notes.html'));
+  res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
 
 //shows the index.html
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-  });
+  res.sendFile(path.join(__dirname, '/public/index.html'));
+});
 
 // Start the server
 app.listen(PORT, () => {
