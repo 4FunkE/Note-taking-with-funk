@@ -19,7 +19,7 @@ app.get('/api/notes', (req, res) => {
   });
 
 // POST update a new note, add to file, and return it
-app.post('/api/reviews', (req, res) => {
+app.post('/api/notes', (req, res) => {
     const { title, text } = req.body;
     if (!title || !text) {
       return res.status(400).json({ error: 'For Funks sake, you need a title and text.' });
@@ -45,7 +45,7 @@ app.post('/api/reviews', (req, res) => {
 });
 
 //shows the notes.html
-app.get('/noted', (req, res) => {
+app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, 'notes.html'));
 });
 
