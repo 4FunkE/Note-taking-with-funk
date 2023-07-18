@@ -56,5 +56,5 @@ app.get('*', (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Funking Server is listening on port ${PORT}`);
+    console.log(`Funking Server is listening at http://localhost:${PORT}`);
   });
