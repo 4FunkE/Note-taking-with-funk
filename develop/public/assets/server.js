@@ -6,7 +6,7 @@ const path = require("path");//import path to create file paths
 const app = express();//create a variable to use express (web building frameswork)
 const PORT = process.env.PORT || 3000; //the port linked it .env or 3000
 
-//GET for read file and return
+//GET read file, and return
 app.get('/api/notes', (req, res) => {
     fs.readFile(path.join(__dirname, 'db.json'), "utf8", (err, data) => {
         if (err) {
@@ -18,13 +18,12 @@ app.get('/api/notes', (req, res) => {
     });
   });
 
-// POST update a new note add to file and return it
+// POST update a new note, add to file, and return it
 app.post('/api/reviews', (req, res) => {
     const { title, text } = req.body;
     if (!title || !text) {
       return res.status(400).json({ error: 'For Funks sake, you need a title and text.' });
     }
-
     //readfile
     fs.readFile(path.join(__dirname, "db.json"), "utf8", (err, data) => {
         if (err) {
@@ -44,3 +43,13 @@ app.post('/api/reviews', (req, res) => {
         });
     });
 });
+
+//shows the notes.html
+app.get('/noted', (req, res) => {
+    res.sendFile(path.join(__dirname, 'notes.html'));
+});
+
+//shows the index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+  });
