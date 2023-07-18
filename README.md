@@ -14,12 +14,12 @@ I was motivated to create this project to help my self and others stay organized
 ## Installation
 
 To use this site the user...
-- Deployed Site -->
+- Deployed Site --> [HEROKU]()
 
 ## Usage
 
     ```md
-![alt text](assets/images/screenshot.png)
+![alt text](./develop/public/assets/images/Screenshot%202023-07-18%20162820.png)
     ```
 
 ## Credits
