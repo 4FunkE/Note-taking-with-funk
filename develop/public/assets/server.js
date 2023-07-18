@@ -20,10 +20,22 @@ app.get('/api/notes', (req, res) => {
 
 // POST update a new note add to file and return it
 app.post('/api/reviews', (req, res) => {
-    
-    res.json(`${req.method} request received`);
-  
-    console.info(req.rawHeaders);
-  
-    console.info(`${req.method} request received`);
-  });
+    //readfile
+    fs.readFile(path.join(__dirname, "db.json"), "utf8", (err, data) => {
+        if (err) {
+          console.error(err);
+          return res.status(500).json({ error: 'Failed to read the funking notes...' });
+        } 
+        const notes = JSON.parse(data); // Convert string into JSON object
+        const newNote = { id: uuidv4(), title, text };
+        notes.push(newNote);//// Add a new note
+    //writefile
+    fs.writeFile(path.join(__dirname, 'db.json'), JSON.stringify(notes), (err) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ error: 'Failed to save note' });
+        }
+        res.json(newNote);
+        });
+    });
+});
