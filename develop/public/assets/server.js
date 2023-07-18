@@ -20,6 +20,11 @@ app.get('/api/notes', (req, res) => {
 
 // POST update a new note add to file and return it
 app.post('/api/reviews', (req, res) => {
+    const { title, text } = req.body;
+    if (!title || !text) {
+      return res.status(400).json({ error: 'For Funks sake, you need a title and text.' });
+    }
+
     //readfile
     fs.readFile(path.join(__dirname, "db.json"), "utf8", (err, data) => {
         if (err) {
@@ -33,7 +38,7 @@ app.post('/api/reviews', (req, res) => {
     fs.writeFile(path.join(__dirname, 'db.json'), JSON.stringify(notes), (err) => {
         if (err) {
             console.error(err);
-            return res.status(500).json({ error: 'Failed to save note' });
+            return res.status(500).json({ error: 'Failed to save note -Funk' });
         }
         res.json(newNote);
         });
