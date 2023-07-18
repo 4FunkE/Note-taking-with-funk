@@ -53,3 +53,8 @@ app.get('/noted', (req, res) => {
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
   });
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Funking Server is listening on port ${PORT}`);
+  });
