@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 3000; //the port linked it .env or 3000
 app.use(express.json());
 // Serve static files from the "public" directory
 app.use(express.static('public'));
-
+//for the uuid
+app.use(express.urlencoded({ extended: true }));
 
 //GET read file, and return
 app.get('/api/notes', (req, res) => {
