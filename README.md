@@ -14,7 +14,7 @@ I was motivated to create this project to help my self and others stay organized
 ## Installation
 
 To use this site the user can enter the deployed URL link below. Enjoy taking notes. 
-- Deployed Site --> [HEROKU](https://mighty-chamber-82688-af0f8567bc18.herokuapp.com/ deployed)
+- Deployed Site --> [HEROKU](https://mighty-chamber-82688-af0f8567bc18.herokuapp.com/)
 
 ## Usage
 
