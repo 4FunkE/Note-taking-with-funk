@@ -19,7 +19,7 @@ To use this site the user can enter the deployed URL link below. Enjoy taking no
 ## Usage
 
     ```md
-![alt text](./develop/public/assets/images/Screenshot%202023-07-18%20162820.png)
+![alt text](./view/assets/images/Screenshot%202023-07-18%20162820.png)
     ```
 
 ## Credits

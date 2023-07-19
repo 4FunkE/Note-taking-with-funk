@@ -8,8 +8,8 @@ const PORT = process.env.PORT || 3000; //the port linked it .env or 3000
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
-// Serve static files from the "public" directory
-app.use(express.static('public'));
+// Serve static files from the "view" directory
+app.use(express.static('view'));
 //for the uuid
 app.use(express.urlencoded({ extended: true }));
 
@@ -53,12 +53,12 @@ app.post('/api/notes', (req, res) => {
 
 //shows the notes.html
 app.get('/notes', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/notes.html'));
+  res.sendFile(path.join(__dirname, '/view/notes.html'));
 });
 
 //shows the index.html
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/index.html'));
+  res.sendFile(path.join(__dirname, '/view/index.html'));
 });
 
 // Start the server
