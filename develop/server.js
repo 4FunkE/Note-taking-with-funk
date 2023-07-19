@@ -1,6 +1,6 @@
 const express = require("express");//import express
 const fs = require("fs");//import fs to read and write files
-const { v4: uuid4 } = require("uuid");//importing the v4 property from uuid named it uuid4
+const { v4: uuidv4 } = require("uuid");//importing the v4 property from uuid named it uuid4
 const path = require("path");//import path to create file paths
 
 const app = express();//create a variable to use express (web building frameswork)
@@ -11,9 +11,10 @@ app.use(express.json());
 // Serve static files from the "public" directory
 app.use(express.static('public'));
 
+
 //GET read file, and return
 app.get('/api/notes', (req, res) => {
-    fs.readFile(path.join(__dirname, 'db.json'), "utf8", (err, data) => {
+    fs.readFile(path.join(__dirname, '/db/db.json'), "utf8", (err, data) => {
         if (err) {
             console.error(err);
             return res.status(500).json({ error: 'Failed to read the funking notes...' });
@@ -30,7 +31,7 @@ app.post('/api/notes', (req, res) => {
       return res.status(400).json({ error: 'For Funks sake, you need a title and text.' });
     }
     //readfile
-    fs.readFile(path.join(__dirname, "db.json"), "utf8", (err, data) => {
+    fs.readFile(path.join(__dirname, "/db/db.json"), "utf8", (err, data) => {
         if (err) {
           console.error(err);
           return res.status(500).json({ error: 'Failed to read the funking notes...' });
@@ -39,7 +40,7 @@ app.post('/api/notes', (req, res) => {
         const newNote = { id: uuidv4(), title, text };
         notes.push(newNote);//// Add a new note
     //writefile
-    fs.writeFile(path.join(__dirname, 'db.json'), JSON.stringify(notes), (err) => {
+    fs.writeFile(path.join(__dirname, '/db/db.json'), JSON.stringify(notes), (err) => {
         if (err) {
             console.error(err);
             return res.status(500).json({ error: 'Failed to save note -Funk' });
