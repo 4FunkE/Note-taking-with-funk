@@ -2,7 +2,7 @@
 
 ## Description
 
-I was motivated to create this project to help my self and others stay organized in their daily lives. In Not-taker a user can write down important notes and items they need to remember. With Note-taker the user can write down the constant ideas and activities intsead of forgetting. I learned how to implements and use express to create API routes. 
+I was motivated to create this project to help myself and others stay organized in their daily lives. In Note-taker a user can write down ideas and thoughts they need to remember through out the day. I learned how to implement and use express to create API routes. I also learned how to deploy using Heroku. 
 
 ## Table of Contents
 

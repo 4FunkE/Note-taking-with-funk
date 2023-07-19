@@ -1,19 +1,23 @@
 {
   "name": "funke-note-taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "I was motivated to create this project to help myself and others stay organized in their daily lives. In Note-taker a user can write down ideas and thoughts they need to remember through out the day. I learned how to implement and use express to create API routes. I also learned how to deploy using Heroku.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "Note-Taker",
+    "Funk"
+  ],
+  "author": "4FunkE",
+  "license": "MIT",
   "dependencies": {
     "bootstrap": "^5.3.0",
     "express": "^4.18.2",
     "uuid": "^9.0.0"
   },
   "engines": {
-    "node": ">=14"
+    "node": "18.x"
   }
 }
