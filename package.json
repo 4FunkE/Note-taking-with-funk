@@ -4,7 +4,8 @@
   "description": "I was motivated to create this project to help myself and others stay organized in their daily lives. In Note-taker a user can write down ideas and thoughts they need to remember through out the day. I learned how to implement and use express to create API routes. I also learned how to deploy using Heroku.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [
     "Note-Taker",
